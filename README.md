@@ -2,6 +2,8 @@
 
 
 ```bash
+Fork from neal-sample
+
 npm install
 npm run watch
 ```

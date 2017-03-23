@@ -5,23 +5,25 @@ import {
   CustomerQuote, CustomerQuotes,
   DropdownMenu, DropdownToggle,
   Footer, FooterAddress,
-  Hero,
   HorizontalSplit,
   ImageList, ImageListItem,
   Navbar, NavItem,
   Page,
   PricingPlan, PricingTable,
   Section,
-  SignupInline, SignupModal,
   Stripe,
   Team,
   TeamMember,
 } from "neal-react";
 
-const brandName = "SamplePage";
+import {SignupModal} from "./SignupModal.jsx"
+import {Hero} from "./Hero.jsx"
+import {SignupInline} from "./Signup.jsx"
+
+const brandName = "CoAXs Boston";
 const brand = <span>{brandName}</span>;
 
-const onSignup = ({ name: name, email: email, password: password }) => Stripe.StripeHandler.open({
+const onSignup = ({ email: email}) => Stripe.StripeHandler.open({
   name: "Stripe Integration Included",
   description: "Like this? Donate $5 <3",
   panelLabel: "Donate {{amount}}",
@@ -32,64 +34,12 @@ const onSignup = ({ name: name, email: email, password: password }) => Stripe.St
 const businessAddress = (
   <address>
     <strong>{brandName}</strong><br/>
-    1337 Market Street, Suite 1337<br/>
-    San Francisco, CA 94103<br/>
-    +1 (123) 456-7890
+    77 Massachusetts Avenue<br/>
+    Cambridge, MA 02139<br/>
   </address>
 );
 
-const pricingPlan1 = {
-  name: "Personal",
-  description: "Describe your plans with easy-to-use pricing tables. Each plan provides callbacks to handle visitor clicks.",
-  price: "$99",
-  features: {
-    "Describe pricing plans as JSON": true,
-    "Features can be active/inactive": true,
-    "Works on mobile": true,
-    "Custom callbacks": true,
-    "Extra Feature 1": false,
-    "Extra Feature 2": false,
-  },
-  onClick: onSignup,
-};
 
-const pricingPlan2 = Object.assign({}, pricingPlan1, {
-  price: "$499",
-  name: "Startup",
-  features: Object.assign({}, pricingPlan1.features, {
-    "Extra Feature 1": true,
-  }),
-});
-
-const pricingPlan3 = Object.assign({}, pricingPlan2, {
-  price: "$999",
-  name: "Enterprise",
-  features: Object.assign({}, pricingPlan2.features, {
-    "Extra Feature 2": true,
-  }),
-});
-
-const sampleCode = `<Page>
-  <Hero><h1>{ /* Content */ }</h1></Hero>
-  <Section heading="Hello!">
-    <HorizontalSplit padding="md"> { /* Content */ } </HorizontalSplit>
-  </Section>
-  <Section>
-    <Team>
-      <TeamMember name="Link" title="Co-founder" imageUrl="img/link.jpg"> { /* Description */ } </TeamMember>
-      <TeamMember name="Yoshi" title="Co-founder" imageUrl="img/yoshi.jpg"> { /* Description */ } </TeamMember>
-    </Team>
-  </Section>
-  <Section>
-    <PricingTable>
-      <PricingPlan {... pricingPlan1} />
-      <PricingPlan {... pricingPlan2} />
-      <PricingPlan {... pricingPlan3} />
-    </PricingTable>
-    <SignupInline onSubmit={onSignupCallback}/>
-  </Section>
-</Page>
-`;
 
 
 export default (props) => {
@@ -97,68 +47,98 @@ export default (props) => {
     <Page>
 
       <Navbar brand={brand}>
-        <NavItem><Link to="Home" className="nav-link">Home</Link></NavItem>
-        <NavItem dropdown={true}>
-          <DropdownToggle>Github</DropdownToggle>
-          <DropdownMenu>
-            <a href="https://github.com/dennybritz/neal-react" className="dropdown-item" target="_blank">
-              Neal React
-            </a>
-            <a href="https://github.com/dennybritz/neal-sample" className="dropdown-item" target="_blank">
-              Sample Page
-            </a>
-          </DropdownMenu>
-        </NavItem>
+        {/*<NavItem><Link to="Home" className="nav-link">Home</Link></NavItem>*/}
+        {/*<NavItem dropdown={true}>*/}
+          {/*<DropdownToggle>Github</DropdownToggle>*/}
+          {/*<DropdownMenu>*/}
+            {/*<a href="https://github.com/dennybritz/neal-react" className="dropdown-item" target="_blank">*/}
+              {/*Neal React*/}
+            {/*</a>*/}
+            {/*<a href="https://github.com/dennybritz/neal-sample" className="dropdown-item" target="_blank">*/}
+              {/*CoAXs Boston*/}
+            {/*</a>*/}
+          {/*</DropdownMenu>*/}
+        {/*</NavItem>*/}
       </Navbar>
 
-      <Hero backgroundImage="img/hero-bg-01.jpg"
+      <Hero backgroundImage="img/landing.png"
         className="text-xs-center">
-        <h1 className="display-4"> Declarative Landing Pages for React.js </h1>
-        <p className="lead">Build a beautiful landing page in less than an hour.
-          No more redundant code. Easily extensible.</p>
+        <h1 className="display-4"> CoAXs </h1>
+        <p className="lead">Collaborative Accessibility-Based Stakeholder Engagement for transit planning
+        </p>
         <p>
-          <a href="https://github.com/dennybritz/neal-react" target="_blank" className="btn btn-white">
-            Get it on Github
-          </a>
+
+          <a className="btn btn-white btn-ghost" data-toggle="modal" data-target="#signup-modal">Sign in</a>
+          <a className="btn btn-white btn-ghost" style={{marginLeft: 20}} data-toggle="modal" data-target="#signup-modal">Sign up</a>
+
+
+        </p>
+        <p>
+
         </p>
       </Hero>
 
       <Section className="subhero">
         <ImageList centered>
-          <ImageListItem src="img/press/cnn-logo.png" url="http://www.cnn.com"/>
-          <ImageListItem src="img/press/forbes-logo.png" url="http://forbes.com/"/>
-          <ImageListItem src="img/press/theverge-logo.png" url="http://www.theverge.com/"/>
-          <ImageListItem src="img/press/techcrunch-logo.jpg" url="http://techcrunch.com/"/>
+          <ImageListItem src="img/TransitCenter.png" url="http://transitcenter.org"/>
+          <ImageListItem src="img/fmc.png" url="http://mfc.mit.edu"/>
         </ImageList>
       </Section>
 
-      <Section className="nopad-bottom">
-        <Code lang="jsx" block>{sampleCode}</Code>
+      {/*<Section className="nopad-bottom">*/}
+        {/*<Code lang="jsx" block>{sampleCode}</Code>*/}
+      {/*</Section>*/}
+
+      <Section heading="Intro">
+        <div>
+          <p>Transit planners often lack platforms for meaningfully engaging stakeholders and the public around transit projects. The complexities of transit networks have traditionally made it difficult to move beyond public hearings with pre-generated, static maps and abstract claims about "travel time savings" of different scenarios.
+          </p>
+          <p>
+            What if there were interactive platforms to help planners and the public better understand the spatial impacts of transit? We are exploring ways to maximize the positive impacts of emerging urban accessibility standards and practices by building them into innovative tools to transform stakeholder engagement for transit projects.
+          </p>
+        </div>
+
+
+
       </Section>
 
-      <Section>
+      <Section className="gray">
         <HorizontalSplit padding="md">
           <div>
-            <p className="lead">Batteries Included</p>
-            <p>Neal is based on <a href="http://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4</a> and ships with navbar, hero, footer, sections, horizontal split, pricing tables, customer quotes and other components you need for a landing page. No more repetitive coding! Oh, and it's easy to extend.</p>
+            <p className="lead">City of Atlanta Guiding Principles of Transit</p>
+            <p>Purpose is to significantly expand MARTA transit service in Atlanta
+              Receipts projected at $2.5 billion (2016$) over life of the tax
+              Project list approved
+              MARTA Board of Directors (May)
+              City of Atlanta City Council (June)
+              Referendum on November 8
+            </p>
           </div>
           <div>
-            <p className="lead">Third-Party Integrations</p>
-            <p>External integrations like &nbsp;
-              <a href="http://www.google.com/analytics/">Google Analytics</a>,&nbsp;
-              <a href="https://segment.com/">Segment</a>,&nbsp;
-              <a href="https://stripe.com/">Stripe</a> and&nbsp;
-              <a href="http://typeform.com">Typeform</a> are included.
-              No more copying & pasting integration code, all you need is your API keys. We automatically track events when visitors navigate to different parts of your page.</p>
+            <p className="lead">Potential High Capacity Improvements</p>
+            <p>City of Atlanta
+              Light Rail Transit
+              Atlanta BeltLine Loop
+              Irwin – AUC Line
+              Downtown – Capitol Ave Line
+              Crosstown Midtown Line
+              Crosstown Crescent Line
+              Peachtree – Ft Mac – Barge Rd Line
+              “S” Concept – Murphy Crossing – Armour Yard via AUC and Eastside Trail
+            </p>
           </div>
           <div>
-            <p className="lead">Serverless Deployment</p>
-            <p>Because you are relying on react.js and third-party integration you don't need a server to host your landing page. Simply upload it to an Amazon S3 bucket, enable website hosting, and it's ready to go!</p>
+            <p className="lead">Potential Bus Service Improvements</p>
+            <p>Frequent Local Service
+              15-minute peak; 30-minute off-peak service on Routes 12, 49, 51, 55 and 60
+              Supporting Local Service
+              Increased service during off-peak to include midday, nights and weekends on selected routes
+            </p>
           </div>
         </HorizontalSplit>
       </Section>
 
-      <Section heading="Inline and Modal Signup components" className="gray">
+      <Section heading="Inline and Modal Signup components">
         <p>Use these components to capture user data, display a payment dialog and/or send them to your own backend for handling. Of course, you could also just use a Typeform to collect user emails. </p>
         <SignupInline onSubmit={onSignup}/>
         <SignupModal modalId="signup-modal" onSubmit={onSignup}/>
@@ -167,46 +147,12 @@ export default (props) => {
         </p>
       </Section>
 
-      <Section>
-        <PricingTable>
-          <PricingPlan {... pricingPlan1} />
-          <PricingPlan {... pricingPlan2} />
-          <PricingPlan {... pricingPlan3} />
-        </PricingTable>
-      </Section>
 
-      <Section>
-        <CustomerQuotes>
-          <CustomerQuote name="Paul Graham" title="YC" imageUrl="img/people/paulgraham.jpg">
-            <p>What I tell founders is not to sweat the business model too much at first. The most important task at first is to build something people want. If you don't do that, it won't matter how clever your business model is.</p>
-          </CustomerQuote>
-          <CustomerQuote name="Elon Musk" imageUrl="img/people/elonmusk.jpg">
-            <p>I came to the conclusion that we should aspire to increase the scope and scale of human consciousness in order to better understand what questions to ask. Really, the only thing that makes sense is to strive for greater collective enlightenment.</p>
-          </CustomerQuote>
-          <CustomerQuote name="Reid Hoffman" title="Linkedin" imageUrl="img/people/reidhoffman.jpg">
-            <p>If you are not embarrassed by the first version of your product, you've launched too late.</p>
-          </CustomerQuote>
-        </CustomerQuotes>
-      </Section>
 
-      <Section>
-        <Team>
-          <TeamMember name="Member 1" title="Co-founder" imageUrl="img/people/grumpycat.jpg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </TeamMember>
-          <TeamMember name="Member 2" title="Co-founder" imageUrl="img/people/boo.jpg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </TeamMember>
-          <TeamMember name="Member 3" title="Co-founder" imageUrl="img/people/panda.jpg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </TeamMember>
-        </Team>
-      </Section>
+
 
       <Footer brandName={brandName}
-        facebookUrl="http://www.facebook.com"
-        twitterUrl="http://www.twitter.com/dennybritz"
-        githubUrl="https://github.com/dennybritz/neal-react"
+        githubUrl="https://github.com/mitTransportAnalyst/CoAXs-React"
         address={businessAddress}>
       </Footer>
     </Page>

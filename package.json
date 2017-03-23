@@ -1,8 +1,8 @@
 {
-  "name": "neal-sample",
+  "name": "CoAXs-Landing-Page",
   "version": "0.1.0",
-  "description": "A sample page built with neal-react",
-  "repository": "https://github.com/dennybritz/neal-react",
+  "description": "CoAXs Landing Page",
+  "repository": "https://github.com/mitTransportAnalyst/CoAXs-Landing-Page",
   "main": "js/app.js",
   "scripts": {
     "watch": "webpack --watch",
