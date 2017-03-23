@@ -1,6 +1,6 @@
 import React from "react";
-import SamplePage from "./sample-page.jsx";
-import Entrysurvey from "./Entrysurvey.jsx";
+import SamplePage from "./Component/sample-page.jsx";
+import Entrysurvey from "./Component/Entrysurvey.jsx";
 
 import ReactDOM from "react-dom";
 import { Router, IndexRoute, Route, Link, Redirect, browserHistory } from "react-router";

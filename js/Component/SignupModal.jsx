@@ -66,11 +66,21 @@ export class SignupModal extends React.Component {
 
   handleChange = (e) => {
     this.setState({ [`${e.target.name}`]: e.target.value });
+
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    window.location.href='https://goo.gl/forms/zhtiYNq1FIA8uPPV2';
+    console.log(this.state.email);
+    const emailAddress = this.state.email;
+    const requestBody = {email : emailAddress};
+    fetch('https://api.mlab.com/api/1/databases/tdm/collections/login?apiKey=9zaMF9-feKwS1ZliH769u7LranDon3cC'
+      ,{method:'POST',  headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }, body:JSON.stringify( requestBody )})
+      .then(window.location.href='https://goo.gl/forms/zhtiYNq1FIA8uPPV2');
+
     // if (this.props.onSubmit) { this.props.onSubmit(this.state); }
   };
 
