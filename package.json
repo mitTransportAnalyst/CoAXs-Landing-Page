@@ -5,17 +5,20 @@
   "repository": "https://github.com/mitTransportAnalyst/CoAXs-Landing-Page",
   "main": "js/app.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base public/ --history-api-fallback",
+    "start": "node server.js",
+    "startdev": "webpack-dev-server --content-base public/ --history-api-fallback",
     "watch": "webpack --watch",
     "serve": "webpack-dev-server --content-base public/ --history-api-fallback",
     "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext js,jsx ."
   },
-  "author": "Denny Britz",
+  "author": "Xin Zheng",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.15.2",
     "neal-react": "^0.2.3",
+    "path": "^0.12.7",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0-rc5"

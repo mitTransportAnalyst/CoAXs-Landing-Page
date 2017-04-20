@@ -79,7 +79,7 @@ export class SignupModal extends React.Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }, body:JSON.stringify( requestBody )})
-      .then(window.location.href='https://goo.gl/forms/zhtiYNq1FIA8uPPV2');
+      .then(window.location.href='http://coaxs-nola.herokuapp.com');
 
     // if (this.props.onSubmit) { this.props.onSubmit(this.state); }
   };
