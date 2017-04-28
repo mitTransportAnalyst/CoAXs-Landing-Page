@@ -60,7 +60,7 @@ export default (props) => {
 
       <Section className="subhero">
         <ImageList centered>
-          <ImageListItem src="img/TransitCenter3.png" url="http://transitcenter.org"/>
+          <ImageListItem src="img/transitcenter3.png" url="http://transitcenter.org"/>
           <ImageListItem src="img/fmc.png" url="http://mfc.mit.edu"/>
         </ImageList>
       </Section>
