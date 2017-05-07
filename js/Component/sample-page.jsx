@@ -18,7 +18,7 @@ import {SigninModal} from "./SigninModal.jsx"
 
 import {Hero} from "./Hero.jsx"
 
-const brandName = "CoAXs New Orleans";
+const brandName = "CoAXs | New Orleans";
 const brand = <span>{brandName}</span>;
 
 
@@ -40,30 +40,27 @@ export default (props) => {
       <Navbar brand={brand}>
       </Navbar>
 
-      <Hero backgroundImage="img/landing.png"
-            className="text-xs-center">
-        <h1 className="display-4"> CoAXs </h1>
-        <p className="lead">Collaborative Accessibility-Based Stakeholder Engagement for transit planning
-        </p>
+        <Hero backgroundImage="img/landingpageBW.jpg"
+              className="text-xs-center">
+          <h1 className="display-4" style={{color: "black"}}> CoAXs </h1>
+          <p className="lead" style={{color: "black"}}>Collaborative Accessibility-Based Stakeholder Engagement for transit planning
+          </p>
 
-        <SignupModal modalId="signup-modal"/>
-        <SigninModal modalId="signin-modal"/>
+          <SignupModal modalId="signup-modal"/>
+          <SigninModal modalId="signin-modal"/>
 
-        <p>
+          <p>
 
 
-        </p>
-        <p>
+          </p>
+          <p>
 
-        </p>
-      </Hero>
+          </p>
+        </Hero>
 
-      <Section className="subhero">
-        <ImageList centered>
-          <ImageListItem src="img/transitcenter3.png" url="http://transitcenter.org"/>
-          <ImageListItem src="img/fmc.png" url="http://mfc.mit.edu"/>
-        </ImageList>
-      </Section>
+
+
+
 
 
       <Section heading="Welcome to CoAXs!">
@@ -89,16 +86,16 @@ export default (props) => {
             if you complete each step, you’ll be entered to win a $50 prize. Here’s what to expect:
           </p>
             <ul>
-              <li><strong>Step 1:</strong> Intro Survey and Consent: To get started, you’ll fill out an intro survey to give us some
+              <li><strong>Step 1: Intro Survey and Consent: </strong>To get started, you’ll fill out an intro survey to give us some
                 background on where you’re coming from, as well as provide consent for participating in this study.
               </li>
-              <li><strong>Step 2:</strong> Get to know CoAXs: In this step, you’ll watch a short video to learn how CoAXs works and
+              <li><strong>Step 2: Get to know CoAXs: </strong>In this step, you’ll watch a short video to learn how CoAXs works and
                 explore its basic capabilities.
               </li>
-              <li><strong>Step 3:</strong> Create your own scenario: In this step, you’ll watch a second short video, and then have a
+              <li><strong>Step 3: Create your own scenario: </strong>In this step, you’ll watch a second short video, and then have a
                 chance to try out your own improvements to the public transportation system.
               </li>
-              <li> <strong>Step 4:</strong> Exit Survey: When you’re finished using the tool, we’d ask that you again fill out a brief
+              <li> <strong>Step 4: Exit Survey: </strong>When you’re finished using the tool, we’d ask that you again fill out a brief
                 survey to help us understand what you got from using the tool.
               </li>
 
@@ -171,17 +168,32 @@ export default (props) => {
 
       <Section heading="Get started: Sign up (new user) or sign in (existing user)">
 
-        <button className="btn" data-toggle="modal" data-target="#signup-modal">Sign up</button>
-        <button className="btn" data-toggle="modal" data-target="#signin-modal" style={{marginLeft: 20}}>Sign in
+        <button className="btn btn-primary" data-toggle="modal" data-target="#signup-modal">Sign up</button>
+        <button className="btn btn-default" data-toggle="modal" data-target="#signin-modal" style={{marginLeft: 20}}>Sign in
         </button>
 
       </Section>
 
+      <div style={{marginTop:"7rem" }}>
+        <Section className="subhero" >
+          <ImageList centered>
+            <ImageListItem src="img/transitcenter3.png" url="http://transitcenter.org"/>
+            <ImageListItem src="img/fmc.png" url="http://mfc.mit.edu"/>
+          </ImageList>
+        </Section>
+      </div>
 
-      <Footer brandName={brandName}
-              githubUrl="https://github.com/mitTransportAnalyst/CoAXs-React"
-              address={businessAddress}>
-      </Footer>
+
+
+      <div style={{marginTop:"-4rem"}}>
+        <Footer brandName={brandName}
+                githubUrl="https://github.com/mitTransportAnalyst/CoAXs-React"
+                address={businessAddress}>
+                style={{marginTop:0}}
+        </Footer>
+
+      </div>
+
     </Page>
   );
 };

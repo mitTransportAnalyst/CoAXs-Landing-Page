@@ -19,7 +19,8 @@ export class Hero extends React.Component {
     }
     const _className = classNames("neal-hero jumbotron jumbotron-fluid", this.props.className);
     return (
-      <div {... this.props} className={_className} style={_style}>
+        <div {... this.props} className={_className} style={{height: "65vh",backgroundImage:`url(${this.props.backgroundImage})`,padding:"10rem", marginBottom:"20px"}}>
+
         <Container>
           { this.props.children }
         </Container>
@@ -27,4 +28,5 @@ export class Hero extends React.Component {
     );
   }
 }
+
 
