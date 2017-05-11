@@ -3,7 +3,7 @@ import {Link} from "react-router";
 import {
   Code,
   DropdownMenu, DropdownToggle,
-  Footer, FooterAddress,
+  FooterAddress,
   HorizontalSplit,
   ImageList, ImageListItem,
   Navbar, NavItem,
@@ -12,6 +12,8 @@ import {
   Team,
   TeamMember,
 } from "neal-react";
+
+import {Footer} from "./footer.jsx"
 
 import {SignupModal} from "./SignupModal.jsx"
 import {SigninModal} from "./SigninModal.jsx"
@@ -69,12 +71,7 @@ export default (props) => {
 
           <p>
 
-            CoAXs is an interactive planning tool developed by a team at MIT that aims to improve participation and
-            creative problem-solving in the transportation planning process. It was developed by the research group
-            Mobility Futures Collaborative at MIT, with support from the TransitCenter Foundation.
-
-            So far, CoAXs has been used in Boston, London, and Santiago. In this next phase of our research, we’re
-            excited to test CoAXs in New Orleans, San Francisco, and Atlanta.
+            CoAXs is an interactive planning tool developed by a team at the Massachusetts Institute of Technology (MIT) that aims to improve participation and creative problem-solving in the transportation planning process. It was developed by the research group Mobility Futures Collaborative, with support from the TransitCenter Foundation. CoAXs utilizes open data and free software to enable users to test new transportation scenarios in real time, and demonstrates different project benefits. The tool has been tested in workshops in Boston, London, UK, and Santiago, Chile, and the research team is continuing to develop CoAXs and solicit feedback in this next phase of our research, in which we’re testing CoAXs with advocacy organizations in New Orleans, San Francisco, and Atlanta.
 
           </p>
 
@@ -82,8 +79,7 @@ export default (props) => {
 
           <p>
 
-            We’ve designed an online experience for testing CoAXs that should take about 15-20 minutes to complete, and
-            if you complete each step, you’ll be entered to win a $50 prize. Here’s what to expect:
+            We’ve designed an online experience for testing CoAXs that should take about 15-20 minutes to complete, and if you complete each step, you’ll be entered to win a $50 prize. Here’s what to expect:
           </p>
             <ul>
               <li><strong>Step 1: Intro Survey and Consent: </strong>To get started, you’ll fill out an intro survey to give us some
@@ -104,7 +100,7 @@ export default (props) => {
 
 
 
-          <p>If you have any questions at any point, don’t hesitate to send a message to our team at <a
+          <p>If you have any questions at any point, please don’t hesitate to send a message to our team at <a
             href="mailto:coaxs-help@mit.edu?Subject=CoAXs%20help" target="_top">coaxs-help@mit.edu</a>.
 
           </p>
@@ -153,13 +149,13 @@ export default (props) => {
             We’ve partnered with Ride New Orleans to explore how a tool like CoAXs could help advance conversations about transit improvements in the region. You’ll have a chance to explore how different potential upgrades to bus routes could improve access to Ochsner Medical Center in Jefferson Parish and other destinations across parish lines. CoAXs will enable you to explore different combinations of alternatives to RTA Route 16 and JeT routes E3 and E5, as illustrated in the maps below:
           </p>
 
-          <div><strong>RTA Route 16 Alternatives</strong></div>
+          <div><strong>RTA #16 S. Claiborne Alternatives</strong></div>
           <div><img src="img/16.png" width="50%"/></div>
           <br/>
-          <div><strong>JeT E3 Alternatives</strong></div>
+          <div><strong>JeT #E3 Kenner Local</strong></div>
           <div><img src="img/E3.png" width="50%"/></div>
           <br/>
-          <div><strong>JeT E5 Alternatives</strong></div>
+          <div><strong>JeT #E5 Causeway</strong></div>
           <div><img src="img/E5.png" width="50%"/></div>
 
 
@@ -188,10 +184,14 @@ export default (props) => {
 
 
       <div style={{marginTop:"-4rem"}}>
+
         <Footer brandName={brandName}
                 githubUrl="https://github.com/mitTransportAnalyst/CoAXs-React"
                 address={businessAddress}>
                 style={{marginTop:0}}
+
+
+
         </Footer>
 
       </div>
