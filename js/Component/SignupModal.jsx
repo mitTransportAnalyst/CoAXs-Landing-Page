@@ -2,7 +2,7 @@
  * Created by xinzheng on 3/22/17.
  */
 import React from "react";
-import { Col } from "./bootstrap.jsx";
+import {Col} from "./bootstrap.jsx";
 
 class ModalHeader extends React.Component {
 
@@ -62,26 +62,43 @@ export class SignupModal extends React.Component {
     modalId: "signup-modal",
   };
 
-  state = { };
+  state = {};
 
   handleChange = (e) => {
-    this.setState({ [`${e.target.name}`]: e.target.value });
+    this.setState({[`${e.target.name}`]: e.target.value});
 
   };
 
   handleSubmit = (e) => {
+
     e.preventDefault();
     console.log(this.state.email);
     const emailAddress = this.state.email;
-    const requestBody = {email : emailAddress};
-    fetch('https://api.mlab.com/api/1/databases/tdm/collections/login?apiKey=9zaMF9-feKwS1ZliH769u7LranDon3cC'
-      ,{method:'POST',  headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }, body:JSON.stringify( requestBody )})
-      .then(window.location.href='http://coaxs-nola.herokuapp.com');
+    const requestBody = {email: emailAddress};
 
-    // if (this.props.onSubmit) { this.props.onSubmit(this.state); }
+    let mode = false;
+    Promise.all([
+      fetch('https://api.mlab.com/api/1/databases/tdm/collections/login?apiKey=9zaMF9-feKwS1ZliH769u7LranDon3cC'
+        , {
+          method: 'POST', headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }, body: JSON.stringify(requestBody)
+        }).then(res => res.json()),
+
+      fetch('https://api.mlab.com/api/1/databases/tdm/collections/user?q={"city":"NOLA"}&apiKey=9zaMF9-feKwS1ZliH769u7LranDon3cC', {method: 'GET',}).then(res => res.json())
+    ])
+
+      .then(([loginStatus, countres]) => {
+        if (countres[0].count % 2 === 0) {
+          window.location.href='http://coaxs.herokuapp.com/main/nola/presurveyaccess?email='+this.state.email
+        } else {
+          window.location.href='http://coaxs.herokuapp.com/main/nola/presurveyptp?email='+this.state.email
+        }
+      });
+
+
+    if (this.props.onSubmit) { this.props.onSubmit(this.state); }
   };
 
   renderBody = () => {
@@ -106,7 +123,7 @@ export class SignupModal extends React.Component {
                 <div className="modal-body">
                   { this.renderBody() }
                 </div>
-                <ModalFooter buttonText={this.props.buttonText} />
+                <ModalFooter buttonText={this.props.buttonText}/>
               </form>
             </div>
           </div>

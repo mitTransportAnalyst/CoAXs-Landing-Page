@@ -75,7 +75,7 @@ export class SigninModal extends React.Component {
 
     fetch('https://api.mlab.com/api/1/databases/tdm/collections/login?q={"email":"'+emailAddress+'"}&apiKey=9zaMF9-feKwS1ZliH769u7LranDon3cC',{method:'GET', })
       .then(res => res.json())
-      .then(res => { if (res.length === 0) {this.setState({isInDB: false})} else {window.location.href='http://coaxs-nola.herokuapp.com'} });
+      .then(res => { if (res.length === 0) {this.setState({isInDB: false})} else {window.location.href='http://coaxs.herokuapp.com'} });
 
   };
 

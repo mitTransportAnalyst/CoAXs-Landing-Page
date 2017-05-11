@@ -113,8 +113,7 @@ export default (props) => {
 
       </Section>
 
-      <Section className="gray" heading="Exploring transit improvements to connect Jefferson and Orleans parishes
-">
+      <Section className="gray" heading="Exploring transit improvements to connect Jefferson and Orleans parishes">
         {/*<HorizontalSplit padding="md">*/}
         {/*<div>*/}
         {/*<p className="lead">City of Atlanta Guiding Principles of Transit</p>*/}
@@ -151,14 +150,17 @@ export default (props) => {
 
         <div>
           <p>
-            We’ve partnered with Ride New Orleans to explore how a tool like CoAXs might help advance conversations about transit improvements in the region.
+            We’ve partnered with Ride New Orleans to explore how a tool like CoAXs could help advance conversations about transit improvements in the region. You’ll have a chance to explore how different potential upgrades to bus routes could improve access to Ochsner Medical Center in Jefferson Parish and other destinations across parish lines. CoAXs will enable you to explore different combinations of alternatives to RTA Route 16 and JeT routes E3 and E5, as illustrated in the maps below:
           </p>
 
-          <p>
-            Today you’ll have a chance to explore how different potential upgrades to bus routes could improve access to Ochsner Medical Center in Jefferson Parish and other destinations across parish lines. CoAXs will enable you to explore different combinations of alternatives to RTA Route 16 and JeT routes E3 and E5, as illustrated in the map below, with different levels of service:
-          </p>
-
-          <img src="img/NOLAscenario.png" width="70%"/>
+          <div><strong>RTA Route 16 Alternatives</strong></div>
+          <div><img src="img/16.png" width="50%"/></div>
+          <br/>
+          <div><strong>JeT E3 Alternatives</strong></div>
+          <div><img src="img/E3.png" width="50%"/></div>
+          <br/>
+          <div><strong>JeT E5 Alternatives</strong></div>
+          <div><img src="img/E5.png" width="50%"/></div>
 
 
         </div>
