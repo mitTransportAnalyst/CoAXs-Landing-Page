@@ -26,6 +26,8 @@ const brand = <span>{brandName}</span>;
 
 const businessAddress = (
   <address>
+    <strong>Massachusetts Institute of Technology</strong><br/>
+     <strong>Department of Urban Studies and Planning</strong><br/>
     <strong>{brandName}</strong><br/>
     77 Massachusetts Avenue<br/>
     Cambridge, MA 02139<br/>
@@ -118,39 +120,6 @@ export default (props) => {
       </Section>
 
       <Section className="gray" heading="Exploring Bus Improvements in San Francisco">
-        {/*<HorizontalSplit padding="md">*/}
-        {/*<div>*/}
-        {/*<p className="lead">City of Atlanta Guiding Principles of Transit</p>*/}
-        {/*<p>Purpose is to significantly expand MARTA transit service in Atlanta*/}
-        {/*Receipts projected at $2.5 billion (2016$) over life of the tax*/}
-        {/*Project list approved*/}
-        {/*MARTA Board of Directors (May)*/}
-        {/*City of Atlanta City Council (June)*/}
-        {/*Referendum on November 8*/}
-        {/*</p>*/}
-        {/*</div>*/}
-        {/*<div>*/}
-        {/*<p className="lead">Potential High Capacity Improvements</p>*/}
-        {/*<p>City of Atlanta*/}
-        {/*Light Rail Transit*/}
-        {/*Atlanta BeltLine Loop*/}
-        {/*Irwin – AUC Line*/}
-        {/*Downtown – Capitol Ave Line*/}
-        {/*Crosstown Midtown Line*/}
-        {/*Crosstown Crescent Line*/}
-        {/*Peachtree – Ft Mac – Barge Rd Line*/}
-        {/*“S” Concept – Murphy Crossing – Armour Yard via AUC and Eastside Trail*/}
-        {/*</p>*/}
-        {/*</div>*/}
-        {/*<div>*/}
-        {/*<p className="lead">Potential Bus Service Improvements</p>*/}
-        {/*<p>Frequent Local Service*/}
-        {/*15-minute peak; 30-minute off-peak service on Routes 12, 49, 51, 55 and 60*/}
-        {/*Supporting Local Service*/}
-        {/*Increased service during off-peak to include midday, nights and weekends on selected routes*/}
-        {/*</p>*/}
-        {/*</div>*/}
-        {/*</HorizontalSplit>*/}
 
         <div>
           <p>
@@ -236,7 +205,7 @@ export default (props) => {
       <Section heading="Get started: Sign up (new user) or sign in (existing user)">
 
         <button className="btn btn-primary" data-toggle="modal" data-target="#signup-modal">Sign up</button>
-        <button className="btn btn-default" data-toggle="modal" data-target="#signin-modal" style={{marginLeft: 20}}>
+        <button className="btn btn-success" data-toggle="modal" data-target="#signin-modal" style={{marginLeft: 20}}>
           Sign in
         </button>
 
@@ -246,6 +215,7 @@ export default (props) => {
         <Section className="subhero">
           <ImageList centered>
             <ImageListItem src="img/transitcenter3.png" url="http://transitcenter.org"/>
+            <ImageListItem src="img/DUSPMIT2.png" url="https://dusp.mit.edu"/>
             <ImageListItem src="img/fmc.png" url="http://mfc.mit.edu"/>
           </ImageList>
         </Section>
