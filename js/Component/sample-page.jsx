@@ -26,6 +26,8 @@ const brand = <span>{brandName}</span>;
 
 const businessAddress = (
   <address>
+    <strong>Massachusetts Institute of Technology</strong><br/>
+    <strong>Department of Urban Studies and Planning</strong><br/>
     <strong>{brandName}</strong><br/>
     77 Massachusetts Avenue<br/>
     Cambridge, MA 02139<br/>
