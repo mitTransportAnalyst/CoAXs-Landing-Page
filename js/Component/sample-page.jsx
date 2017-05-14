@@ -146,7 +146,7 @@ export default (props) => {
 
         <div>
           <p>
-            We’ve partnered with Ride New Orleans to explore how a tool like CoAXs could help advance conversations about transit improvements in the region. You’ll have a chance to explore how different potential upgrades to bus routes could improve access to Ochsner Medical Center in Jefferson Parish and other destinations across parish lines. CoAXs will enable you to explore different combinations of alternatives to RTA Route 16 and JeT routes E3 and E5, as illustrated in the maps below:
+            We’ve partnered with Ride New Orleans to explore how a tool like CoAXs could help advance conversations about transit improvements in the region. You’ll have a chance to explore how different potential upgrades to bus routes could improve access to Ochsner Medical Center in Jefferson Parish and other destinations across parish lines. CoAXs will enable you to explore different combinations of alternatives to RTA #16 S. Claiborne, JeT #E3 Kenner Local and JeT #E5 Causeway, as illustrated in the maps below:
           </p>
 
           <div><strong>RTA #16 S. Claiborne Alternatives</strong></div>
@@ -167,7 +167,7 @@ export default (props) => {
       <Section heading="Get started: Sign up (new user) or sign in (existing user)">
 
         <button className="btn btn-primary" data-toggle="modal" data-target="#signup-modal">Sign up</button>
-        <button className="btn btn-default" data-toggle="modal" data-target="#signin-modal" style={{marginLeft: 20}}>Sign in
+        <button className="btn btn-success" data-toggle="modal" data-target="#signin-modal" style={{marginLeft: 20}}>Sign in
         </button>
 
       </Section>
@@ -176,6 +176,7 @@ export default (props) => {
         <Section className="subhero" >
           <ImageList centered>
             <ImageListItem src="img/transitcenter3.png" url="http://transitcenter.org"/>
+            <ImageListItem src="img/DUSPMIT2.png" url="https://dusp.mit.edu"/>
             <ImageListItem src="img/fmc.png" url="http://mfc.mit.edu"/>
           </ImageList>
         </Section>
