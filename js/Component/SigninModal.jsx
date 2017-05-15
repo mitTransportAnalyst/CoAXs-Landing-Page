@@ -47,6 +47,20 @@ class ModalFooter extends React.Component {
 }
 
 
+class ModalFooterRedirect extends React.Component {
+
+
+  render() {
+    return (
+      <div className="modal-footer" >
+        <button className="btn btn-primary btn-ghost" style={{marginRight: "1.8rem"}} onClick={(e)=>{window.location.href="http://coaxs.herokuapp.com/main/nola/accessibility?control28770612="+this.props.email}}>Accessibility</button>
+        <button className="btn btn-primary btn-ghost" onClick={(e)=>{window.location.href="http://coaxs.herokuapp.com/main/nola/point2point?control28805034="+this.props.email}}>Travel Time</button>
+      </div>
+    );
+  }
+}
+
+
 export class SigninModal extends React.Component {
 
   static propTypes = {
@@ -62,7 +76,7 @@ export class SigninModal extends React.Component {
     modalId: "signin-modal",
   };
 
-  state = { isInDB : true };
+  state = { isInDB : true, showRedirectModal: false };
 
   handleChange = (e) => {
     this.setState({ [`${e.target.name}`]: e.target.value });
@@ -75,7 +89,7 @@ export class SigninModal extends React.Component {
 
     fetch('https://api.mlab.com/api/1/databases/tdm/collections/login?q={"email":"'+emailAddress+'"}&apiKey=9zaMF9-feKwS1ZliH769u7LranDon3cC',{method:'GET', })
       .then(res => res.json())
-      .then(res => { if (res.length === 0) {this.setState({isInDB: false})} else {window.location.href='http://coaxs.herokuapp.com'} });
+      .then(res => { if (res.length === 0) {this.setState({isInDB: false})} else {this.setState({showRedirectModal: true})} });
 
   };
 
@@ -106,7 +120,10 @@ export class SigninModal extends React.Component {
                 <div className="modal-body">
                   { this.renderBody() }
                 </div>
-                <ModalFooter buttonText={this.props.buttonText} />
+
+                {this.state.showRedirectModal ? <ModalFooterRedirect email={this.state.email}/> :  <ModalFooter buttonText={this.props.buttonText} />}
+
+
               </form>
             </div>
           </div>
