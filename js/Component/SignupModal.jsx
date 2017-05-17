@@ -86,14 +86,14 @@ export class SignupModal extends React.Component {
           }, body: JSON.stringify(requestBody)
         }).then(res => res.json()),
 
-      fetch('https://api.mlab.com/api/1/databases/tdm/collections/user?q={"city":"NOLA"}&apiKey=9zaMF9-feKwS1ZliH769u7LranDon3cC', {method: 'GET',}).then(res => res.json())
+      fetch('https://api.mlab.com/api/1/databases/tdm/collections/user?q={"city":"ATL"}&apiKey=9zaMF9-feKwS1ZliH769u7LranDon3cC', {method: 'GET',}).then(res => res.json())
     ])
 
       .then(([loginStatus, countres]) => {
         if (countres[0].count % 2 === 0) {
-          window.location.href='http://coaxs.herokuapp.com/main/nola/presurveyaccess?email='+this.state.email
+          window.location.href='http://coaxs.herokuapp.com/main/atl/presurveyaccess?email='+this.state.email
         } else {
-          window.location.href='http://coaxs.herokuapp.com/main/nola/presurveyptp?email='+this.state.email
+          window.location.href='http://coaxs.herokuapp.com/main/atl/presurveyptp?email='+this.state.email
         }
       });
 

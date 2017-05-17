@@ -20,7 +20,7 @@ import {SigninModal} from "./SigninModal.jsx"
 
 import {Hero} from "./Hero.jsx"
 
-const brandName = "CoAXs | New Orleans";
+const brandName = "CoAXs | Atlanta";
 const brand = <span>{brandName}</span>;
 
 
@@ -111,55 +111,45 @@ export default (props) => {
 
       </Section>
 
-      <Section className="gray" heading="Exploring transit improvements to connect Jefferson and Orleans parishes">
-        {/*<HorizontalSplit padding="md">*/}
-        {/*<div>*/}
-        {/*<p className="lead">City of Atlanta Guiding Principles of Transit</p>*/}
-        {/*<p>Purpose is to significantly expand MARTA transit service in Atlanta*/}
-        {/*Receipts projected at $2.5 billion (2016$) over life of the tax*/}
-        {/*Project list approved*/}
-        {/*MARTA Board of Directors (May)*/}
-        {/*City of Atlanta City Council (June)*/}
-        {/*Referendum on November 8*/}
-        {/*</p>*/}
-        {/*</div>*/}
-        {/*<div>*/}
-        {/*<p className="lead">Potential High Capacity Improvements</p>*/}
-        {/*<p>City of Atlanta*/}
-        {/*Light Rail Transit*/}
-        {/*Atlanta BeltLine Loop*/}
-        {/*Irwin – AUC Line*/}
-        {/*Downtown – Capitol Ave Line*/}
-        {/*Crosstown Midtown Line*/}
-        {/*Crosstown Crescent Line*/}
-        {/*Peachtree – Ft Mac – Barge Rd Line*/}
-        {/*“S” Concept – Murphy Crossing – Armour Yard via AUC and Eastside Trail*/}
-        {/*</p>*/}
-        {/*</div>*/}
-        {/*<div>*/}
-        {/*<p className="lead">Potential Bus Service Improvements</p>*/}
-        {/*<p>Frequent Local Service*/}
-        {/*15-minute peak; 30-minute off-peak service on Routes 12, 49, 51, 55 and 60*/}
-        {/*Supporting Local Service*/}
-        {/*Increased service during off-peak to include midday, nights and weekends on selected routes*/}
-        {/*</p>*/}
-        {/*</div>*/}
-        {/*</HorizontalSplit>*/}
+      <Section className="gray" heading="Atlanta’s transit improvements projects">
+
 
         <div>
           <p>
-            We’ve partnered with Ride New Orleans to explore how a tool like CoAXs could help advance conversations about transit improvements in the region. You’ll have a chance to explore how different potential upgrades to bus routes could improve access to Ochsner Medical Center in Jefferson Parish and other destinations across parish lines. CoAXs will enable you to explore different combinations of alternatives to RTA #16 S. Claiborne, JeT #E3 Kenner Local and JeT #E5 Causeway, as illustrated in the maps below:
+            The Mobility Features Collaborative (MFC) at MIT and Advance Atlanta have joined efforts to explore the impacts of transit improvements in Atlanta. After voters approved a half penny increase to the Metropolitan Atlanta Rapid Transit Authority (MARTA) sales tax in November 2016, MARTA is considering a handful of projects to enhance the city’s public transit system. We’re particularly interested in looking at the potential outcomes of some of these projects on people’s mobility using CoAXs.
+</p>
+          <p>
+            We’ll be exploring the impact of two Bus Rapid Transit (BRT) lines, a total of five ‘infill’ stations on the red and green lines, and the extension of the Streetcar Line. The BRT lines we’re considering are the Campbellton Rapid Bus, which is planned to run on the Campbellton Rd. corridor from Oakland City to the proposed Greenbriar Transfer Center, and the North Side Drive Rapid Bus, which will run on Northside Drive from I-75 to West End station. The map below shows the total projects under MARTA’s consideration (in grey) and the specific improvements we seek to test (in orange):
           </p>
 
-          <div><strong>RTA #16 S. Claiborne Alternatives</strong></div>
-          <div><img src="img/16.png" width="50%"/></div>
+          <div><strong>Atlanta’s transit improvements projects</strong></div>
+          <div><img src="img/ATL.png" width="50%"/></div>
+          <strong>Source: MARTA</strong>
           <br/>
-          <div><strong>JeT #E3 Kenner Local</strong></div>
-          <div><img src="img/E3.png" width="50%"/></div>
           <br/>
-          <div><strong>JeT #E5 Causeway</strong></div>
-          <div><img src="img/E5.png" width="50%"/></div>
 
+          <p>
+            We will be exploring 4 scenarios:
+
+            <ul>
+              <li><strong>Scenario 1: BRT’s only: </strong>Under this scenario we will measure accessibility gains and travel time savings resulting from the construction of the Campbellton and Northside Drive BRT lines.
+              </li>
+              <li><strong>Scenario 2: BRT + Infill Stations: </strong>Building on scenario 1, we will test the additional impact of adding 3 stations to the Red Line and 2 to the Green Line (5 in total) within their current length (infill stations).
+              </li>
+              <li><strong>Scenario 3: Street Car only: </strong>Look at the changes in accessibility resulting from the eastbound extension of the Streetcar Line.
+              </li>
+              <li> <strong>Scenario 4: All improvements: </strong>As its name suggest, this scenario will look at the aggregated accessibility gains of all improvements.
+              </li>
+
+            </ul>
+
+
+
+
+
+
+
+          </p>
 
         </div>
 
