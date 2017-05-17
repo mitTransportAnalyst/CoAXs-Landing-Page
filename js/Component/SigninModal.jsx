@@ -53,8 +53,8 @@ class ModalFooterRedirect extends React.Component {
   render() {
     return (
       <div className="modal-footer" >
-        <button className="btn btn-primary btn-ghost" style={{marginRight: "1.8rem"}} onClick={(e)=>{window.location.href="http://coaxs.herokuapp.com/main/atl/accessibility?control28770612="+this.props.email}}>Accessibility</button>
-        <button className="btn btn-primary btn-ghost" onClick={(e)=>{window.location.href="http://coaxs.herokuapp.com/main/atl/point2point?control28805034="+this.props.email}}>Travel Time</button>
+        <button className="btn btn-primary btn-ghost" style={{marginRight: "1.8rem"}} onClick={(e)=>{window.location.href="http://coaxs.herokuapp.com/main/atl/accessibility?control28947061="+this.props.email}}>Accessibility</button>
+        <button className="btn btn-primary btn-ghost" onClick={(e)=>{window.location.href="http://coaxs.herokuapp.com/main/atl/point2point?control28770765="+this.props.email}}>Travel Time</button>
       </div>
     );
   }
